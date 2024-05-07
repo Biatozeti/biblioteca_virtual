@@ -11,7 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('livros', function (Blueprint $table){
+            $table->id();
+            $table->string('titulo',100)->nullable(false);
+            $table->string('autor',50)->unique()->nullable(false);
+            $table->date('data_lancamneto')->nullable(false);
+            $table->string('editora',50)->nullable(false);
+            $table->string('sinopse',1000)->unique()->nullable(false);
+            $table->string('genero',50)->nullable(false);
+            $table->string('avaliacao',1000)->nullable(false);
+            $table->timestamps();
+
+        });
     }
 
     /**
@@ -19,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        schema:: dropIfExists('livros');
     }
 };

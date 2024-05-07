@@ -22,7 +22,7 @@ class LivrosFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|max:50|min:1',
+            'titulo' => 'required|max:100|min:1',
             'autor'=>'required|max:50|min:1',
             'data_lancamento'=>'required|date',
             'editora'=> 'required|max:50|min:1',
@@ -35,9 +35,9 @@ class LivrosFormRequest extends FormRequest
     public function messages ()
     {
         return[
-            'nome.required'=> 'o campo é obrigatório',
-            'nome.max'=> 'o campo deve conter no maximo 50 caracteres',
-            'nome.min'=> 'o campo deve conter no minimo 1 caracteres',
+            'titulo.required'=> 'o campo é obrigatório',
+            'titulo.max'=> 'o campo deve conter no maximo 100 caracteres',
+            'titulo.min'=> 'o campo deve conter no minimo 1 caracteres',
             'autor.required'=> 'o campo é obrigatório',
             'autor.max'=> 'o campo deve conter no maximo 50 caracteres',
             'autor.min'=> 'o campo deve conter no minimo 1 caracteres',
